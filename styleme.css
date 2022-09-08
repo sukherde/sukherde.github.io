@@ -1,0 +1,50 @@
+body{
+    background-color: silver;
+}
+h1, h2, h3{
+    color: rebeccapurple;
+}
+h1{
+    position: relative;
+    border-style: solid;    
+}
+h3{
+    font-family: sans-serif;
+}
+.spanHighlightText{
+    color: cornflowerblue;
+    font-size: 120%;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.spanItalicText{
+    font-style: italic;
+}
+
+#sectionHeader{
+    font-size: larger;
+}
+a:link { color: #3366CC; text-decoration: none}
+a:visited { color: red; text-decoration: none}
+a:hover { color: #3366CC; text-decoration: underline}
+a:active { color: #3366CC; text-decoration: none}
+
+p::first-letter{
+    font-size: 150%;
+}
+dt{
+    color: #3366CC;
+}
+
+ol {
+    counter-reset: my-custom-counter 5;
+    list-style: none;
+}
+
+ol li {
+counter-increment: my-custom-counter -1;
+}
+
+ol li::before {
+content: counter(my-custom-counter) '. ';
+}
