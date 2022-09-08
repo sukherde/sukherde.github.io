@@ -1,0 +1,94 @@
+@media screen and (max-width: 600px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 3fr 3fr 4fr;
+        grid-template-rows: 1fr 1fr 4fr 4fr 1fr;
+        gap: 0px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .column1{
+        grid-column: 1 / span 4;                           
+        grid-row: 3 / 4;
+        background-color: grey;
+        color: black;                
+    }
+
+    .column2{
+        grid-column: 1 / 8;
+        grid-row: 4 / 5;
+        background-color: darkgray;
+        color: black;                
+    }
+
+    .column3{
+        grid-column: 5 / 8;
+        grid-row: 3 / 4;
+        background-color: lightgray;
+        color: black;                
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 3fr 3fr 4fr;
+        grid-template-rows: 1fr 1fr 4fr 1fr;
+        gap: 0px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .column1{
+        grid-column: 1 / 5;                
+        background-color: grey;
+        color: black;                
+    }
+
+    .column2{
+        grid-column: 5 / 7;
+        background-color: darkgray;
+        color: black;                
+    }
+
+    .column3{
+        grid-column: 7 / 8;
+        background-color: lightgray;
+        color: black;                
+    }
+}            
+
+.grid-container div{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.header{
+    grid-column-start: 1;
+    grid-column-end: 8;
+    font-size: 16pt;        
+    padding: 20px;        
+    background-color: aquamarine;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu-div{
+    background-color: darkgreen;
+    color: white;                
+}
+
+#m1{
+    background-color: darkgreen;
+    grid-column-start: 4;
+    grid-column-end: 8;
+}
+
+
+.footer{
+    grid-column: 1 / 8;
+    text-align: center;
+    background-color: darkgreen;
+    color: white;        
+    font-size: 12pt;        
+}
