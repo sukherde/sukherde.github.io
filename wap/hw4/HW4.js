@@ -6,7 +6,6 @@ function myFunctionTest(expected, found) {
       return "TEST FAILED.  Expected " + expected + " found " + found;
     }
   }
-  
   /* runs test to see if expected argument is === to value returned by function2test argument */
   function myFunctionTestArrays(expected, found) {
     if (expected == found) {
@@ -15,7 +14,6 @@ function myFunctionTest(expected, found) {
       return "TEST FAILED.  Expected " + expected + " found " + found;
     }
   }
-  
   /* max returns the maximum of 2 arguments */
   function max(a, b) {
     if (a > b) {
