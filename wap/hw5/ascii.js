@@ -1,42 +1,26 @@
 window.onload = (event) => {
     init();
-  };
-
-var textArea;
+};
 var allText;
 var curIndex = null;
-var curAnimation = null;
 var curInterval = null;
-var startButton;
-var stopButton;
-var animationSelectBox;
-var turboCheckBox;
 var started;
-var fontSizeTextArea;
 
 function init(){    
-    textArea = document.getElementById("text-area");    
-    startButton = document.getElementById("start");
-    startButton.onclick = onClickStart;    
-
-    stopButton = document.getElementById("stop")
-    stopButton.onclick = onClickStop;
-
-    animationSelectBox = document.getElementById("animation")
-    animationSelectBox.onchange = onChangeAnimation;
-
-    turboCheckBox = document.getElementById("turbo");
-    turboCheckBox.onclick = onClickTurbo;
-
-    fontSizeTextArea = document.getElementById("fontsize");
-    fontSizeTextArea.onchange = onChangeFontSize;
+    document.getElementById("start").onclick = onClickStart;    
+    document.getElementById("stop").onclick = onClickStop;
+    document.getElementById("animation").onchange = onChangeAnimation;
+    document.getElementById("turbo").onclick = onClickTurbo;
+    document.getElementById("fontsize").onchange = onChangeFontSize;
 }
-
 function onChangeAnimation(){
+    document.getElementById("text-area").value = ANIMATIONS[this.value];
     curIndex = 0;
 }
-
 function onChangeFontSize(){ 
+    fontSizeTextArea = document.getElementById("fontsize");
+    textArea = document.getElementById("text-area");    
+
     switch(fontSizeTextArea.value) {
         case "Tiny":
             textArea.style.fontSize = '7pt';            
@@ -60,56 +44,43 @@ function onChangeFontSize(){
             textArea.style.fontSize = '12pt';        
     }
 }
-
 function onClickStart(){ 
-    if(animationSelectBox.value != "Blank"){
-        let curAnimationText = ANIMATIONS[animationSelectBox.value];
-        allText = curAnimationText.split("=====\n");
+    let animationSelectBox = document.getElementById("animation");
+    if(animationSelectBox.value === "Blank") return;
 
-        if (turboCheckBox.checked) {
-            curInterval = setInterval(startAnimate, 50);
-        } else {
-            curInterval = setInterval(startAnimate, 250);
-        }
-        
-        started = true;
-        changeAvailibilityButtons();
-    }
+    allText = ANIMATIONS[animationSelectBox.value].split("=====\n");    
+    curInterval = setInterval(startAnimate, (document.getElementById("turbo").checked) ? 50 : 250);
+    started = true;
+    changeAvailibilityButtons();
 }
-
 function onClickStop(){
     clearInterval(curInterval);
     started = false;
     changeAvailibilityButtons();
 }
-
 function onClickTurbo(){    
-    if(!started){
-        return;
-    }
+    if(!started) return;
     clearInterval(curInterval);
+    turboCheckBox = document.getElementById("turbo");
     if(turboCheckBox.checked){
         curInterval = setInterval(startAnimate, 50);
     } else {
         curInterval = setInterval(startAnimate, 250);
     }
 }
-
-function changeAvailibilityButtons(){
-    stopButton.disabled = !started;
-    startButton.disabled = started;
-    animationSelectBox.disabled = started;
+function changeAvailibilityButtons(){ 
+    document.getElementById("stop").disabled = !started;
+    document.getElementById("start").disabled = started;
+    document.getElementById("animation").disabled = started;
 }
-
 function startAnimate(){
-    if(curIndex === null){
-        curIndex = 0;
-    }
+    textArea = document.getElementById("text-area");    
+
+    if(curIndex === null) curIndex = 0;
+
     textArea.value = allText[curIndex];  
     curIndex++;
     if(curIndex == allText.length){
         curIndex = 0;
     }
 }
-
-
