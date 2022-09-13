@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W2D1 Quiz</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // initialize mocha
+        mocha.setup('bdd');
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+
+    </script>
+
+    <script src="./code.js"></script>
+    <script src="./tests.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script>
+        mocha.run();
+    </script>
+
+    <div class="div1">
+        <label for="web">Website</label><br>
+        <input name="web" id="web" type="text" placeholder="Website URL"><br><br>
+        <label for="email">Email address</label><br>
+        <input type="text" name="email" id="email" placeholder="Enter email"> <br>
+        <span class="s1"> We will never share your email with anyone else.</span> <br><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" placeholder="Password"><br><br>
+        <label class="main">Check me out
+            <input id="checkBox" type="checkbox">
+            <span class="geekmark"></span>
+        </label><br>
+        <input id="submit" type="submit" value="Submit">
+    </div>
+</body>
+
+</html>

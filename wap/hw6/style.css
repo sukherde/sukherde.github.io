@@ -1,0 +1,100 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label {
+    font-size: 16pt;
+}
+
+.div1 {
+    border: solid lightgrey 5px;
+    padding: 30px;
+}
+
+::placeholder {
+    font-size: 18px;
+    padding: 5px;
+}
+
+input {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border: lightgrey solid 1px;
+    border-radius: 5px;
+}
+
+.s1{
+    color: grey;
+}
+
+/*check box*/
+
+.main {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+  
+/* Creating a custom checkbox
+based on demand */
+.geekmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+
+.main input:checked ~ .geekmark {
+    background-color: green;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.geekmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked ~ .geekmark:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and 
+showing only two border to make it look
+like a tickmark */
+.main .geekmark:after {
+    left: 6px;
+    bottom: 5px;
+    width: 5px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input[type=submit] {
+    background-color: rgba(11, 114, 248);
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+}
+
+input[type="text"]{
+    width: 90%;
+}
