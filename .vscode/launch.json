@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///Users/sukh/Library/Mobile%20Documents/com~apple~CloudDocs/MIU/WAP/RepoWAP/RepoGitHubPage/sukherde.github.io/wap/hw8/Maze/maze.html",
+            "url": "file:///Users/sukh/Library/Mobile%20Documents/com~apple~CloudDocs/MIU/WAP/RepoWAP/RepoGitHubPage/sukherde.github.io/wap/hw9/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
