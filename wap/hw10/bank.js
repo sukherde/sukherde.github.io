@@ -57,6 +57,32 @@ class Bank{
         return newAccount.getNumber();
     }
 
+     /**
+     * Closes an account
+     * 
+     * @returns {number} the number - account number that will be closed
+     */
+      closeAccount(number){
+        if(!number){
+            throw Error("Account number must be provided to close an account!");
+        }
+        
+        this._accounts = this._accounts.filter((acc) => acc.getNumber() !== number);
+    }
+
+    /**
+     * Account report
+     * 
+     * @returns {String} account report in the bank
+     */
+     accountReport(){
+        let res = "";
+        this._accounts.forEach(element => {
+            res += element + "\n";
+        });
+        return res;
+    }
+
     /**
      * Performs needed actions at the end of the month
      * 

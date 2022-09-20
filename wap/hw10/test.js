@@ -140,3 +140,20 @@ describe("Bank - endOfMonth", function(){
         assert.equal(bankMIU.endOfMonth(), "Interest added SavingsAccount 10000001: balance: 1030; interest: 3 CheckingAccount 10000002: balance: 0; overdraft limit: 100");        
     })
 });
+
+
+describe("Bank - accountReport", function(){
+    it("Bank account report for each account", function(){
+        const report = "Account 10000000: balance 0\nSaving account 10000001: balance 1030; interest rate: 3\nChecking account 10000002: balance 0; overdraft limit: 100\n";
+        assert.equal(bankMIU.accountReport(), report);        
+    })
+});
+
+describe("Bank - closeAccount", function(){
+    it("Bank account close method", function(){
+        bankMIU.closeAccount(10000000);
+        const report = "Saving account 10000001: balance 1030; interest rate: 3\nChecking account 10000002: balance 0; overdraft limit: 100\n";
+        assert.equal(bankMIU.accountReport(), report);        
+    })
+});
+
