@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cookie</title>        
+    </head>
+    <body>
+        <form action="/zam" method="post">
+            <label for="key">Key</label>
+            <input type="text" name="key">
+            <label for="value">Value</label>
+            <input type="text" name="value">
+            <input type="submit" name="Submit">
+        </form>
+        <h2>Cookies</h2>
+        <table>
+            <th>Cookie key</th>
+            <th>Cookie value</th>
+            <% for (const key in cookies) { %>                        
+                <tr class="item">
+                  <td><%= key %></td>
+                  <td><%= cookies[key] %></td>
+                </tr> 
+            <% } %>
+        </table>
+
+        <a href="/clear">Clear cookie</a>
+    </body>
+</html>
