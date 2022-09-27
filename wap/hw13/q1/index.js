@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //Model View Controller
 app.set('views', path.join(__dirname, "view"));
 
 const date = new Date();

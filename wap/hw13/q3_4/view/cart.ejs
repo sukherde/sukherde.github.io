@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">  
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="css" />
+</head>
+<body>
+  <h1>Products in cart</h1>  
+  <a class="button" href="/addProduct">+ Add a product to cart</a>
+  <div>
+    <table id="table-list">
+      <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>        
+      </thead>
+      <% for (var i = 0; i < products.length; i++) { %>        
+        <tr class="item">
+          <td><%= products[i].name %></td>
+          <td><%= products[i].price %></td>
+          <td><%= products[i].desc %></td>
+        </tr> 
+      <% } %>
+    </table>
+  </div>
+</body>
+</html>
