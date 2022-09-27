@@ -9,7 +9,9 @@ const options = {
 const router = express.Router(options);
 
 router.get("/", productController.home);
-router.get("/addProduct", productController.addProduct);
+router.get("/p", productController.product);
+router.post("/addProduct", productController.addProduct);
+router.get("/cart", productController.cart);
 router.post("/addToCart", productController.addToCart);
 
 module.exports = router;

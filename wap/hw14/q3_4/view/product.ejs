@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Node Store</title>
+    <title>Electronic Store</title>
     <link rel="stylesheet"  href="./css/style.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
 
         
         <%- include ('header.ejs') %>
-        <%- include ('navigation.ejs') %>
+        <%- include ('menu.ejs') %>
 
         <div id="body">
           <div id="pdisplay">
@@ -22,7 +22,7 @@
               <h2><%=p.name%></h2>
               <p><%=p.description%></p>
               <p>$<%=p.price%></p>
-              <form method="post" action="/add">
+              <form method="post" action="/addProduct">
                 <input type="hidden" name="i" value=<%=i%>>
                 <button id="atc" type="submit">Add to cart</button>
               </form>
@@ -30,8 +30,7 @@
           </div>
         </div>
 
-        <%- include ('footer.ejs') %>
-        <%- include ('copyright.ejs') %>
+        <%- include ('footer.ejs') %>        
     </div>
 	
   </body>

@@ -1,0 +1,131 @@
+body{
+    background-color: black;
+}
+
+#logo{
+    width: 20%;
+}
+
+#container{
+    display: grid;
+    grid-template-areas:
+    "h h h h h"
+    "n n n n n"
+    "s b b b b"
+    "s b b b b"
+    "s b b b b"
+    "s b b b b"
+    "f f f f f"
+    "c c c c c";
+
+    background-color: #fff;
+    color: #1d1d1d;
+    font-family: Questrial,sans-serif;
+}
+
+a{
+    color: black;
+    text-decoration: solid;
+}
+
+#header{
+    grid-area: h;
+    padding: 5%;
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+#nav{
+    grid-area: n;
+    padding: 1%;
+    background-color: #f7f7f7;
+    display: flex;
+}
+#cart{
+    width: 35%;
+}
+
+#basket{
+    width: auto;
+    margin: auto;
+    margin-left: 90%;
+}
+
+#side{
+    grid-area: s;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: fit-content;
+    margin-left: 30%;
+    line-height: 200%;
+}
+
+#body{
+    grid-area: b;
+    width: auto;
+    margin: auto;
+    padding: 5%;
+    margin-left: 5%;
+    display: flex;
+    flex-flow: wrap;
+}
+
+#footer{
+    grid-area: c;
+    width: auto;
+    margin: auto;
+    padding: 5%;
+}
+
+#icon{
+    width: 70%;
+}
+
+#listing{
+    text-align: center;
+    flex: 30%;
+}
+
+#pdisplay{
+    display: flex;
+}
+
+#pdisplay > img{
+    width: 50%;
+    margin-right: 15%;
+}
+
+#atc{
+    color: white;
+    font-size: large;
+    background-color: #1d1d1d;
+    padding: 5%;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+#lis{
+    margin: auto;
+    width: auto;
+    display: flex;    
+    flex-wrap: wrap;
+}
+#cit{
+    display: flex;
+    vertical-align: bottom;
+}
+#cit > img{
+    display: inline;
+    width: 25%;
+}
+#cit > h2{
+    display: inline;
+    padding-left: 5%;
+    padding-top: 10%;
+}
+#cit > p{
+    display: inline;
+    padding-left: 5%;
+    padding-top: 11%;
+}
