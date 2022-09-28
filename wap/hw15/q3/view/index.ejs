@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electronic Store</title>
+    <link rel="stylesheet"  href="./css/style.css">
+  </head>
+  <body>
+
+    <div id="container">
+        
+        <%- include ('header.ejs') %>
+        <%- include ('menu.ejs') %>
+
+        <div id="side">
+            <h3>Categories</h3>
+            <a href="/laptop">Laptops</a>
+            <a href="/phone">Phone</a>
+        </div>
+        
+        <div id="body">
+            <%for(let i in products){%>
+              <a id="listing" href=<%="/p?id="+products[i].id%>>
+                <img id="icon" src=<%=products[i].pic%>>
+                <p><%=products[i].name%></p>
+                <p>$<%=products[i].price%></p>
+              </a>
+            <%}%>
+        </div>
+        <%- include ('footer.ejs') %>        
+    </div>
+	
+  </body>
+</html>
